@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">12</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -191,6 +191,111 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/17/Ubuntu20.04%E5%AE%89%E8%A3%85ROS%20Noetic%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/01.jpg">
+      <meta itemprop="name" content="Hou-baitang">
+      <meta itemprop="description" content="用于记录学习生活，成为一个自己想要成为的人">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="革Mean君">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/17/Ubuntu20.04%E5%AE%89%E8%A3%85ROS%20Noetic%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">Ubuntu20.04安装ROS noetic教程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-04-17 00:00:00" itemprop="dateCreated datePublished" datetime="2021-04-17T00:00:00+08:00">2021-04-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-19 15:55:21" itemprop="dateModified" datetime="2022-01-19T15:55:21+08:00">2022-01-19</time>
+              </span>
+
+          
+            <span id="/2021/04/17/Ubuntu20.04%E5%AE%89%E8%A3%85ROS%20Noetic%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/" class="post-meta-item leancloud_visitors" data-flag-title="Ubuntu20.04安装ROS noetic教程" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/04/17/Ubuntu20.04%E5%AE%89%E8%A3%85ROS%20Noetic%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/04/17/Ubuntu20.04%E5%AE%89%E8%A3%85ROS%20Noetic%E7%89%88%E6%9C%AC%E6%95%99%E7%A8%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Ubuntu20-04安装ros-noetic版本教程"><a href="#Ubuntu20-04安装ros-noetic版本教程" class="headerlink" title="Ubuntu20.04安装ros noetic版本教程"></a>Ubuntu20.04安装ros noetic版本教程</h2><p>当我们进入ubuntu系统后首先要安装ros的完全版以确保我们正常学习ros的一些内容更方便，接下来我将带着大家安装ros最新版本（noetic版本）</p>
+<p>==此教程同样适用于装载了ubuntu20.04版本的树莓派端（ubuntu20.04系统）==</p>
+<p>第一步设置软件源和秘钥，在这里我推荐使用官方给的软件源，这样安装虽然慢但是可以避免很多安装不全的问题</p>
+<p>在这里可以设置电脑端的软件源（我在测试树莓派时没有设置也可以安装）</p>
+<p>首先设置软件源（官方），执行</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" &gt; /etc/apt/sources.list.d/ros-latest.list'</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p>添加秘钥</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver <span class="string">'hkp://keyserver.ubuntu.com:80'</span> --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p>确保软件最新，执行</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">或者</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></tbody></table></figure>
+<p>安装ros完全版</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ros-noetic-desktop-full</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p>==如果提示安装错误的话请使用手机热点，这样的成功率会高很多==<br>进入树莓派端的方法：电脑端Windows使用putty软件或者Ubuntu使用ssh均可</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh 树莓派名字@树莓派IP地址</span><br></pre></td></tr></tbody></table></figure>
+<p>接下来就是漫长的等待<br>。<br>。<br>。<br>。<br>。<br>。<br>安装完成后要进行环境变量设置<br>在home目录的隐藏文件.bashrc里面添加source命令可以保证我们启动ros时可以正常使用</p>
+<pre class="line-numbers language-j"><code class="language-j">echo <span class="token conjunction variable">"</span>source <span class="token adverb builtin">/</span>opt<span class="token adverb builtin">/</span>ros<span class="token adverb builtin">/</span>noetic<span class="token adverb builtin">/</span>setu<span class="token verb keyword">p.</span>bash<span class="token conjunction variable">"</span> <span class="token verb keyword">></span><span class="token verb keyword">></span> <span class="token adverb builtin">~</span><span class="token adverb builtin">/.</span>bashrc
+source <span class="token adverb builtin">~</span><span class="token adverb builtin">/.</span>bashrc
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>如果出现使用roswtf出现错误的情况可以参考<a target="_blank" rel="noopener" href="https://www.guyuehome.com/12640">以下文章</a></p>
+<p>等待完成后就可以使用ros啦！！！</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -420,7 +525,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
